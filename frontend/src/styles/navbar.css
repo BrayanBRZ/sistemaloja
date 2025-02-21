@@ -1,0 +1,42 @@
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 5px 15px;
+    color: white;
+    position: relative;
+}
+
+.navbar h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 15%;
+    padding: 1px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+    outline: none;
+}
+
+.nav-button:hover {
+    background-color: grey;
+}
+
+.datetime {
+    font-size: 14px;
+}

@@ -1,0 +1,65 @@
+-- Criando o banco de dados
+CREATE DATABASE IF NOT EXISTS sistemaloja_db;
+USE sistemaloja_db;
+
+-- Tabela: cidades
+CREATE TABLE IF NOT EXISTS cidades (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(255) NOT NULL,
+  uf VARCHAR(2) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+-- Tabela: bairros
+CREATE TABLE IF NOT EXISTS bairros (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+-- Tabela: pessoas
+CREATE TABLE IF NOT EXISTS pessoas (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(255) NOT NULL,
+  cidade_id INT(11) NOT NULL,
+  bairro_id INT(11) NOT NULL,
+  cep VARCHAR(20) NOT NULL,
+  endereco VARCHAR(255) NOT NULL,
+  numero VARCHAR(20) NOT NULL,
+  complemento VARCHAR(255) DEFAULT NULL,
+  telefone VARCHAR(20) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (cidade_id) REFERENCES cidades (id) ON DELETE CASCADE,
+  FOREIGN KEY (bairro_id) REFERENCES bairros (id) ON DELETE CASCADE
+);
+
+-- Tabela: produtos
+CREATE TABLE IF NOT EXISTS produtos (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(255) NOT NULL,
+  valor DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+-- Tabela: vendas
+CREATE TABLE IF NOT EXISTS vendas (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  data_venda DATE NOT NULL,
+  pessoa_id INT(11) NOT NULL,
+  valor_total DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (pessoa_id) REFERENCES pessoas (id) ON DELETE CASCADE
+);
+
+-- Tabela: itens_venda
+CREATE TABLE IF NOT EXISTS itens_venda (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  venda_id INT(11) NOT NULL,
+  produto_id INT(11) NOT NULL,
+  quantidade INT(11) NOT NULL,
+  subtotal DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (venda_id) REFERENCES vendas (id) ON DELETE CASCADE,
+  FOREIGN KEY (produto_id) REFERENCES produtos (id) ON DELETE CASCADE
+);

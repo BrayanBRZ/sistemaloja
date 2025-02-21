@@ -1,0 +1,26 @@
+/* Table General Styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid #ddd;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-right: 1px solid #ddd;
+}
+
+th:last-child,
+td:last-child {
+    border-right: none;
+}
+
+thead {
+    border-bottom: 2px solid #ddd;
+}
+
+tbody tr {
+    border-bottom: none;
+}

@@ -1,0 +1,6 @@
+.form-group.telefone,
+.form-group.endereco,
+.form-group.cidade,
+.form-group.bairro {
+    flex: 0 0 40%;
+}

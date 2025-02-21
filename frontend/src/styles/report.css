@@ -1,0 +1,65 @@
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    /* Alterado para linha para alinhar os itens horizontalmente */
+    margin-right: 20px;
+    text-align: left;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-button {
+    width: 100px;
+    background-color: #db8080;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    /* Alterado para linha para alinhar os itens horizontalmente */
+    margin-right: 20px;
+    text-align: left;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-button {
+    height: 40px;
+    width: 40px;
+    padding: 5px 5px;
+    color: white;
+    background-color: #333;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
